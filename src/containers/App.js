@@ -26,15 +26,13 @@ function App() {
         // this.setState({ searchField: event.target.value })
         setSearchField(event.target.value)
     }
-    // render() { only for extends component
     // const { robots, searchField } = this.state; //already have access to it with hooks
     const filteredRobots = robots.filter(robot => {
         return robot.name.toLowerCase().includes(searchField.toLowerCase());
     })
-    //create filteredRobots here to use it as props
 
-
-    return !robots.length ? <h2 className='tc'>Loading please wait...</h2> : (
+    return !robots.length ? 
+    <h2 className='tc'>Loading please wait...</h2> : (
         <div className='tc'>
             <h1 className='f2'>RoboFriends</h1>
             <SearchBox searchChange={onSeachBox} />
